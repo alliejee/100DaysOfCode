@@ -50,8 +50,10 @@ print(f"Sorry {guest_2}, you can't come...")
 print(f"{guest_list[1]}, you're still invited!")
 print(f"{guest_list[0]}, you're still invited!")
 
+num_guests = len(guest_list)
+print(f"\n{num_guests} people are currently invited to the dinner!")
 print("\n")
-print("I gotta delete some folks...")
+print("Sorry. I changed my mind.. I gotta delete some folks...")
 
 del guest_list[1]
 del guest_list[0]
