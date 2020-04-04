@@ -1,3 +1,6 @@
+#ex 6.11
+
+#remember, the city name is the key, the city info is the value
 cities = {
     'Austin': {
         'name': 'Austin',
