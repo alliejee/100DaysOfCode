@@ -1,0 +1,4 @@
+In Python you can lists and dictionaries.
+In Python you can create classes.
+In Python you can learn OOP concepts.
+In Python you can create methods and return values.
