@@ -1,4 +1,5 @@
 import argparse
+import nmap
 from socket import *
 from threading import *
 
@@ -37,10 +38,16 @@ def portScan(target_host, target_ports):
     setdefaulttimeout(1)
     for target_port in target_ports:
         # tell thread to run connectScan method and feed it the target host and current target port
-        t = Thread(target=connectScan, args=(target_host, target_port))
+        t = Thread(target=connectScan, args=(target_host, int(target_port)))
         t.start()
         print(f"Scanning port {target_port}")
         connectScan(target_host, target_port)
+
+def nmapScan(target_host, target_port):
+    nmScan = nmap.PortScanner()
+    nmScan.scan(target_host, target_port)
+    state=nmScan[target_host]['tcp'][int(target_port)]['state']
+    print(f" [*] {target_host} tcp/{target_port} {state}")
 
 def main():
     parser = argparse.ArgumentParser(description="TCP Port Scanner")
